@@ -17,12 +17,15 @@ def generate_password():
     
     #buet perulangan masing masing huruf angka dan simbol biar progrm pack ngmbik berkali kali
     for i in range(jumlah_huruf):
+        #ngambik huruf random
         password_list.append(random.choice(string.ascii_letters))
 
     for i in range(jumlah_angka):
+        #ngambik  angka random
         password_list.append(random.choice(string.digits))
 
     for i in range(jumlah_simbol):
+        #ngambik simbol random
         password_list.append(random.choice(string.punctuation))
 
     random.shuffle(password_list)

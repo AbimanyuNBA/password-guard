@@ -125,17 +125,6 @@ def tambahData():
     entryPassword.delete(0, tk.END)
 
 
-def setupTable():
-    columns = ("Website", "Username", "Password", "Aksi")
-    tree = ttk.Treeview(root, columns=columns, show="headings")
-
-    for col in columns:
-        tree.heading(col, text=col)
-        tree.column(col, width=150)
-    
-    tree.pack(expand=True, fill="both", pady=10)
-
-
 def simpanExcel():
     if len(dataPassword) == 0:
         messagebox.showwarning("Peringatan", "Tidak ada data untuk disimpan")
@@ -202,6 +191,13 @@ tk.Button(root, text="Tambah Data", command=tambahData).pack(pady=5)
 
 tk.Button(root, text="Simpan ke Excel", command=simpanExcel).pack(pady=5)
 
-setupTable()
+columns = ("Website", "Username", "Password")
+tree = ttk.Treeview(root, columns=columns, show="headings")
+
+for col in columns:
+    tree.heading(col, text=col)
+    tree.column(col, width=150)
+    
+tree.pack(expand=True, fill="both", pady=10)
 
 root.mainloop()
